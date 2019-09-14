@@ -44,7 +44,7 @@ github.com/docker/distribution/context
 github.com/docker/distribution/digestset
 github.com/docker/distribution/reference
 github.com/docker/distribution/uuid
-# github.com/docker/docker v0.0.0-20190404075923-dbe4a30928d4 => github.com/openshift/moby-moby v0.0.0-20180329172029-fcdab531a6d9
+# github.com/docker/docker v0.0.0-20190404075923-dbe4a30928d4 => github.com/openshift/moby-moby v1.4.2-0.20190308215630-da810a85109d
 github.com/docker/docker/api
 github.com/docker/docker/api/types
 github.com/docker/docker/api/types/backend
@@ -357,7 +357,7 @@ golang.org/x/net/trace
 golang.org/x/sync/errgroup
 golang.org/x/sync/singleflight
 golang.org/x/sync/syncmap
-# golang.org/x/sys v0.0.0-20190912141932-bc967efca4b8
+# golang.org/x/sys v0.0.0-20190801041406-cbf593c0f2f3
 golang.org/x/sys/unix
 golang.org/x/sys/windows
 # golang.org/x/text v0.3.0
