@@ -4,7 +4,7 @@ go 1.13
 
 replace (
 	github.com/containerd/containerd => github.com/containerd/containerd v0.2.10-0.20170808145631-06b9cb351610
-	github.com/docker/docker => github.com/openshift/moby-moby v0.0.0-20180329172029-fcdab531a6d9
+	github.com/docker/docker => github.com/openshift/moby-moby v1.4.2-0.20190308215630-da810a85109d
 	github.com/moby/buildkit => github.com/dmcgowan/buildkit v0.0.0-20170731200553-da2b9dc7dab9
 	google.golang.org/genproto => google.golang.org/genproto v0.0.0-20190708153700-3bdd9d9f5532
 	google.golang.org/grpc => google.golang.org/grpc v1.3.0
