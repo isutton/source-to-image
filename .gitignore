@@ -4,4 +4,6 @@
 /.vagrant
 .vscode/
 cmd/s2i/debug
+contrib/completions/bash
+contrib/completions/zsh
 *~
