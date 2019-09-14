@@ -5,7 +5,6 @@
 set -o errexit
 set -o nounset
 set -o pipefail
-set -x
 
 S2I_ROOT=$(dirname "${BASH_SOURCE}")/..
 source "${S2I_ROOT}/hack/common.sh"
