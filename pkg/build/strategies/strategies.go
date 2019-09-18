@@ -30,6 +30,30 @@ func Strategy(client docker.Client, config *api.Config, overrides build.Override
 
 	startTime := time.Now()
 
+	if len(config.WithBuilder) != 0 {
+		dockerfileBuilder, err := dockerfile.New(config, fileSystem)
+		if err != nil {
+			buildInfo.FailureReason = utilstatus.NewFailureReason(
+				utilstatus.ReasonGenericS2IBuildFailed,
+				utilstatus.ReasonMessageGenericS2iBuildFailed,
+			)
+			return nil, buildInfo, err
+		}
+
+		dockerfileBuilderResult, err := dockerfileBuilder.Build(config)
+		if err != nil {
+			// FIXME: Handle error
+		}
+
+		if dockerfileBuilderResult != nil && dockerfileBuilderResult.Success {
+			osExecBuilder, err := NewOsExecBuilder(config)
+			if err != nil {
+				// FIXME: Handle error
+			}
+			return osExecBuilder, buildInfo, nil
+		}
+	}
+
 	if len(config.AsDockerfile) != 0 {
 		builder, err = dockerfile.New(config, fileSystem)
 		if err != nil {
@@ -85,4 +109,15 @@ func Strategy(client docker.Client, config *api.Config, overrides build.Override
 		return nil, buildInfo, err
 	}
 	return builder, buildInfo, err
+}
+
+type OsExecBuilder struct {
+}
+
+func (o OsExecBuilder) Build(*api.Config) (*api.Result, error) {
+	panic("implement me")
+}
+
+func NewOsExecBuilder(config *api.Config) (*OsExecBuilder, error) {
+	return &OsExecBuilder{}, nil
 }

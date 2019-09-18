@@ -252,6 +252,9 @@ type Config struct {
 
 	// AssembleRuntimeUser specifies the user to run the assemble-runtime script in container
 	AssembleRuntimeUser string
+
+	// TODO: Document WithBuilder
+	WithBuilder string
 }
 
 // EnvironmentSpec specifies a single environment variable.
